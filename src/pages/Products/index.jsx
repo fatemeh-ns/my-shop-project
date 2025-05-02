@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useImageFetch } from "../../assets/fetchImg/img";
 import Loading from "../../components/Loading";
 import { ToastContainer, toast } from "react-toastify";
+import { useAuth } from "../../components/Context/AuthContext";
 import "react-toastify/ReactToastify.css";
 
 export default function Product() {
+  const { isLoggedIn } = useAuth();
   const clothes = useImageFetch();
   const [animateSection, setAnimateSection] = useState(false);
   const navigate = useNavigate();
@@ -20,6 +22,10 @@ export default function Product() {
   }, [clothes]);
 
   const buyHandler = (item) => {
+    if (!isLoggedIn) {
+      alert("Please login first!");
+      return;
+    }
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingItemIndex = cart.findIndex(
       (cartItem) => cartItem.id === item.id
