@@ -34,6 +34,15 @@ const Sing = () => {
   };
 
   const handleSubmit = () => {
+    if (userInfo.password.length < 8) {
+      toast.error("Password must be at least 8 characters!", {
+        position: "top-right",
+        autoClose: 2000,
+        theme: "light",
+      });
+      return;
+    }
+
     setIsLoggedIn(true);
     addToLocalStorage(userInfo);
     window.scrollTo({ top: 0, behavior: "smooth" });
