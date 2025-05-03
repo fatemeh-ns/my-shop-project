@@ -1,26 +1,21 @@
 const Footer = () => {
   return (
-    <footer className="flex justify-between mt-5 py-[60px] px-[70px] h-[300px] bg-neutral-100">
-      <section className="flex justify-between w-[500px] h-[200]">
-        <section className="flex justify-around flex-col h-[120px]">
-          <div>
-            <p className="text-neutral-400 text-sm md:tracking-wide">
-              CONTACT US
-            </p>
-          </div>
-          <div className="text-sm md:tracking-wide text-neutral-800 flex justify-between flex-col h-[70px]">
+    <footer className="flex flex-col md:flex-row justify-between gap-10 md:gap-0 mt-5 py-12 px-6 md:px-[70px] bg-neutral-100">
+      <section className="flex flex-col md:flex-row justify-between gap-10 items-center md:gap-16 md:w-[500px]">
+        <section className="flex flex-col gap-2">
+          <p className="text-neutral-400 text-sm md:tracking-wide">
+            CONTACT US
+          </p>
+          <div className="text-sm md:tracking-wide text-neutral-800 flex flex-col gap-1">
             <p>+1 (844) 326-6000</p>
             <p>Email Us</p>
             <p>Mon-Fri 9am-3pm PT</p>
           </div>
         </section>
-        <section className="flex justify-around flex-col h-[160px]">
-          <div>
-            <p className="text-neutral-400 text-sm md:tracking-wide">
-              CUSTOMERS
-            </p>
-          </div>
-          <div className="text-sm md:tracking-wide text-neutral-800 flex justify-between flex-col h-[118px]">
+
+        <section className="flex flex-col gap-2">
+          <p className="text-neutral-400 text-sm md:tracking-wide">CUSTOMERS</p>
+          <div className="text-sm md:tracking-wide text-neutral-800 flex flex-col gap-1">
             <p>Start a Return</p>
             <p>Return Policy</p>
             <p>FAQ</p>
@@ -28,11 +23,10 @@ const Footer = () => {
             <p>About Group Gifting</p>
           </div>
         </section>
-        <section className="flex justify-around flex-col h-[180px]">
-          <div>
-            <p className="text-neutral-400 text-sm md:tracking-wide">COMPANY</p>
-          </div>
-          <div className="text-sm md:tracking-wide text-neutral-800 flex justify-between flex-col h-[140px]">
+
+        <section className="flex flex-col gap-2">
+          <p className="text-neutral-400 text-sm md:tracking-wide">COMPANY</p>
+          <div className="text-sm md:tracking-wide text-neutral-800 flex flex-col gap-1">
             <p>About Us</p>
             <p>Sustainability</p>
             <p>Discover Revive</p>
@@ -42,34 +36,31 @@ const Footer = () => {
           </div>
         </section>
       </section>
-      <section>
-        <section className="flex flex-col justify-between h-[180px] w-[400px]">
-          <div>
-            <p className="text-neutral-700 font-medium">
-              Get the latest new from us
-            </p>
-          </div>
-          <div className="flex flex-col justify-around h-[140px]">
-            <input
-              className="h-[35px] w-[100%] px-3 text-neutral-600 bg-neutral-100 border-[1px] border-neutral-300"
-              type="email"
-              placeholder="Enter your email address"
-            />
-            <p className="text-neutral-600 font-normal text-sm md:tracking-wide">
-              By signing up, you agree to our{" "}
-              <span className="underline mx-1 cursor-pointer">
-                Privacy Policy
-              </span>
-              and
-              <span className="underline mx-1 cursor-pointer">
-                Terms of Service
-              </span>
-              .
-            </p>
-            <button className="text-sm font-normal md:tracking-wide bg-neutral-900 w-[100px] p-[8px] text-neutral-100">
-              Subscribe
-            </button>
-          </div>
+
+      <section className="md:w-[400px]">
+        <section className="flex flex-col gap-4">
+          <p className="text-neutral-700 font-medium">
+            Get the latest news from us
+          </p>
+          <input
+            className="h-[35px] w-full px-3 text-neutral-600 bg-neutral-100 border border-neutral-300"
+            type="email"
+            placeholder="Enter your email address"
+          />
+          <p className="text-neutral-600 font-normal text-sm md:tracking-wide">
+            By signing up, you agree to our{" "}
+            <span className="underline mx-1 cursor-pointer">
+              Privacy Policy
+            </span>{" "}
+            and
+            <span className="underline mx-1 cursor-pointer">
+              Terms of Service
+            </span>
+            .
+          </p>
+          <button className="text-sm font-normal md:tracking-wide bg-neutral-900 w-[120px] p-2 text-white">
+            Subscribe
+          </button>
         </section>
       </section>
     </footer>
