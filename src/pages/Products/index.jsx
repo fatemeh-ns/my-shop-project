@@ -23,7 +23,17 @@ export default function Product() {
 
   const buyHandler = (item) => {
     if (!isLoggedIn) {
-      alert("Please login first!");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      toast.error("Please login first!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return;
     }
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
