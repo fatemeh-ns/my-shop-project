@@ -44,45 +44,53 @@ const Login = () => {
   return (
     <>
       <section
-        className={`flex justify-center min-h-screen pt-20 ${
+        className={`flex justify-center items-center min-h-screen pt-20 px-4 ${
           animateSection ? "animate-fadeInRight" : "opacity-0"
         }`}
       >
-        <div className="flex items-center justify-between flex-col h-[200px]">
-          <p className="font-bold text-[20px] m-4">Login</p>
-          <div className="w-[500px]">
-            <label className="inline-block w-[80px]" htmlFor="email">
-              email:
+        <div className="flex flex-col w-full max-w-md bg-white p-6 rounded-md shadow">
+          <p className="font-bold text-[24px] text-center mb-6">Login</p>
+
+          {/* Email */}
+          <div className="mb-4">
+            <label className="block mb-1 font-medium" htmlFor="email">
+              Email:
             </label>
             <input
-              className="bg-gray-100 p-2 rounded-lg w-[400px] m-2"
+              className="bg-gray-100 p-2 rounded-lg w-full"
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="w-[500px]">
-            <label className="inline-block w-[80px]" htmlFor="password">
-              password:
+
+          {/* Password */}
+          <div className="mb-4">
+            <label className="block mb-1 font-medium" htmlFor="password">
+              Password:
             </label>
             <input
-              className="bg-gray-100 p-2 rounded-lg w-[400px] m-2"
+              className="bg-gray-100 p-2 rounded-lg w-full"
               type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+
+          {/* Login Button */}
           <button
             onClick={handleLogin}
-            className="bg-neutral-900 text-[#fff] w-[100%] py-[5px] my-2 text-center rounded-md hover:bg-white hover:text-black transition"
+            className="bg-neutral-900 text-white w-full py-2 rounded-md hover:bg-white hover:text-black border border-neutral-900 transition"
           >
             Login
           </button>
-          <button onClick={goToSing}>
+
+          {/* Link to Signup */}
+          <button onClick={goToSing} className="mt-4 text-center text-sm">
             Didn't you register?
-            <span className="underline text-blue-500 m-2">Sing</span>
+            <span className="underline text-blue-500 ml-1">Sign Up</span>
           </button>
         </div>
       </section>

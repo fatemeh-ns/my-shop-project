@@ -40,75 +40,75 @@ const Cart = () => {
   };
 
   return (
-    <>
-      <table className="flex justify-center items-center flex-col min-h-screen">
-        <thead>
-          <tr className="bg-neutral-900 text-[#fff]">
-            <th className="w-[40rem] p-2">Product Name</th>
-            <th className="w-[8rem] p-2">Unit Price</th>
-            <th className="w-[8rem] p-2">Total Price</th>
-            <th className="w-[8rem] p-2">Quantity</th>
-            <th className="w-[9rem] p-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cart ? (
-            cart.map((item) => (
-              <tr key={item.id}>
-                <td className="w-[40rem] text-center">{item.title}</td>
-                <td className="w-[8rem] text-center">{item.price}</td>
-                <td className="w-[8rem] text-center">
-                  {itemPriceHandler(item.price, item.count || 0).toFixed(2)}
-                </td>
-                <td className="w-[8rem] text-center">
-                  <p>{item.count ? item.count : 0}</p>
-                </td>
-                <td>
-                  <div className="w-[9rem] flex justify-around items-center">
-                    <button
-                      onClick={(e) => actionHandler(e, item.id)}
-                      data-action="plus"
-                      className="text-center w-[1.2rem] h-[1.5rem] my-1 rounded-md"
-                    >
-                      <img src={plus} alt="plus" />
-                    </button>
-                    <button
-                      onClick={(e) => actionHandler(e, item.id)}
-                      data-action="minus"
-                      className="text-center w-[1.2rem] h-[1.5rem] my-1 rounded-md"
-                    >
-                      <img src={minus} alt="minus" />
-                    </button>
-                    <button
-                      onClick={(e) => actionHandler(e, item.id)}
-                      data-action="delete"
-                      className="text-center w-[1.2rem] h-[1.2rem] my-1 rounded-md"
-                    >
-                      <img src={trash} alt="trash" />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <p>Cart is Empty</p>
-          )}
-        </tbody>
-        {cart.length > 0 && (
-          <tfoot>
-            <tr className="text-[#fff] bg-neutral-900 font-bold">
-              <td className="p-2 text-center" colSpan="2">
-                Total Price
-              </td>
+  <div className="w-full px-2 sm:px-6 min-h-screen flex justify-center items-start pt-10">
+  <div className="overflow-x-auto w-full max-w-7xl">
+    <table className="min-w-[700px] w-full border">
+      <thead>
+        <tr className="bg-neutral-900 text-white">
+          <th className="p-2 text-left">Product Name</th>
+          <th className="p-2 text-center">Unit Price</th>
+          <th className="p-2 text-center">Total Price</th>
+          <th className="p-2 text-center">Quantity</th>
+          <th className="p-2 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {cart && cart.length > 0 ? (
+          cart.map((item) => (
+            <tr key={item.id} className="border-t">
+              <td className="p-2">{item.title}</td>
+              <td className="text-center">{item.price}</td>
               <td className="text-center">
-                {totalPriceHandler().toFixed(2)}
+                {itemPriceHandler(item.price, item.count || 0).toFixed(2)}
               </td>
-              <td className="pr-2" colSpan="2">$</td>
+              <td className="text-center">{item.count || 0}</td>
+              <td className="flex justify-center gap-2 py-2">
+                <button
+                  onClick={(e) => actionHandler(e, item.id)}
+                  data-action="plus"
+                  className="w-6 h-6"
+                >
+                  <img src={plus} alt="plus" />
+                </button>
+                <button
+                  onClick={(e) => actionHandler(e, item.id)}
+                  data-action="minus"
+                  className="w-6 h-6"
+                >
+                  <img src={minus} alt="minus" />
+                </button>
+                <button
+                  onClick={(e) => actionHandler(e, item.id)}
+                  data-action="delete"
+                  className="w-6 h-6"
+                >
+                  <img src={trash} alt="trash" />
+                </button>
+              </td>
             </tr>
-          </tfoot>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="5" className="text-center py-4 text-gray-600">
+              Cart is empty
+            </td>
+          </tr>
         )}
-      </table>
-    </>
+      </tbody>
+      {cart.length > 0 && (
+        <tfoot>
+          <tr className="bg-neutral-900 text-white font-bold">
+            <td className="p-2 text-center" colSpan="2">
+              Total Price
+            </td>
+            <td className="text-center">{totalPriceHandler().toFixed(2)} $</td>
+          </tr>
+        </tfoot>
+      )}
+    </table>
+  </div>
+</div>
+
   );
 };
 

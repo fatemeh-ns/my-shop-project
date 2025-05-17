@@ -63,56 +63,67 @@ const Sing = () => {
   return (
     <>
       <section
-        className={`flex justify-center min-h-screen pt-20
-      ${animateSection ? "animate-fadeInLeft" : "opacity-0"}`}
+        className={`flex justify-center items-center min-h-screen pt-20 px-4 ${
+          animateSection ? "animate-fadeInLeft" : "opacity-0"
+        }`}
       >
-        <div className="flex items-center justify-between flex-col h-[200px]">
-          <p className="font-bold text-[20px] m-4">singn</p>
-          <div className="w-[500px]">
-            <label className="inline-block w-[80px]" htmlFor="name">
-              name :
+        <div className="flex flex-col w-full max-w-md bg-white p-6 rounded-md shadow">
+          <p className="font-bold text-[24px] text-center mb-6">Sign Up</p>
+
+          {/* Name */}
+          <div className="mb-4">
+            <label className="block mb-1 font-medium" htmlFor="name">
+              Name:
             </label>
             <input
-              className="bg-gray-100 p-2 rounded-lg w-[400px] m-2"
+              className="bg-gray-100 p-2 rounded-lg w-full"
               type="text"
               id="name"
               name="name"
               onChange={handleInputChange}
             />
           </div>
-          <div className="w-[500px]">
-            <label className="inline-block w-[80px]" htmlFor="email">
-              email :
+
+          {/* Email */}
+          <div className="mb-4">
+            <label className="block mb-1 font-medium" htmlFor="email">
+              Email:
             </label>
             <input
-              className="bg-gray-100 p-2 rounded-lg w-[400px] m-2"
+              className="bg-gray-100 p-2 rounded-lg w-full"
               type="email"
               id="email"
               name="email"
               onChange={handleInputChange}
             />
           </div>
-          <div className="w-[500px]">
-            <label className="inline-block w-[80px]" htmlFor="password">
-              password :
+
+          {/* Password */}
+          <div className="mb-4">
+            <label className="block mb-1 font-medium" htmlFor="password">
+              Password:
             </label>
             <input
-              className="bg-gray-100 p-2 rounded-lg w-[400px] m-2"
+              className="bg-gray-100 p-2 rounded-lg w-full"
               type="password"
               id="password"
               name="password"
               onChange={handleInputChange}
             />
           </div>
+
+          {/* Submit Button */}
           <button
             onClick={handleSubmit}
-            className="bg-neutral-900 text-[#fff] w-[100%] py-[5px] my-2 text-center rounded-md hover:bg-white hover:text-black transition"
+            className="bg-neutral-900 text-white w-full py-2 rounded-md hover:bg-white hover:text-black border border-neutral-900 transition"
           >
-            Sing
+            Sign Up
           </button>
-          <button onClick={goToLogin}>
-            Did you register?
-            <span className="underline text-blue-500 m-2">Login</span>
+
+          {/* Go to Login */}
+          <button onClick={goToLogin} className="mt-4 text-center text-sm">
+            Already registered?
+            <span className="underline text-blue-500 ml-1">Login</span>
           </button>
         </div>
       </section>

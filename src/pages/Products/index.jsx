@@ -96,11 +96,12 @@ export default function Product() {
   ));
 
   return clothes && clothes.length > 0 ? (
-    <section
-      className={`grid grid-cols-3 gap-6 mx-auto w-full max-w-7xl mt-20 transition-all duration-500 ${
-        animateSection ? "animate-fadeInUp" : "opacity-0"
-      }`}
-    >
+   <section
+  className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-0 mx-auto w-full max-w-7xl mt-20 transition-all duration-500 ${
+    animateSection ? "animate-fadeInUp" : "opacity-0"
+  }`}
+>
+
       {content}
       <ToastContainer />
     </section>
