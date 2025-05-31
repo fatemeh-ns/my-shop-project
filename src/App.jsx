@@ -15,7 +15,6 @@ export default function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/products" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/search" element={<Search />} />
@@ -23,6 +22,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sing" element={<Sing />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
     </BrowserRouter>
